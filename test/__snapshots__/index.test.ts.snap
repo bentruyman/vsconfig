@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createConfig creates a new config based on a collection of specified presets 1`] = `
+Object {
+  "folders": Array [
+    Object {
+      "path": ".",
+    },
+  ],
+  "settings": Object {
+    "[json]": Object {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+    },
+    "[markdown]": Object {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+    },
+    "[typescript]": Object {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+      "editor.formatOnSave": true,
+    },
+  },
+}
+`;

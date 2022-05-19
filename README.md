@@ -31,6 +31,20 @@ Generate the recommended extensions config (e.g. `.vscode/extensions.json`):
 $ vsconfig --extensions
 ```
 
+### API
+
+```typescript
+import { createConfig } from "vsconfig";
+
+const config = createConfig([
+  "json",
+  "markdown",
+  "typescript",
+]);
+
+console.log("Settings:", config.settings);
+```
+
 ## Supported
 
 - Deno
