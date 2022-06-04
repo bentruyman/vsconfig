@@ -1,4 +1,5 @@
-import { createConfig } from "../src";
+import { join } from "path";
+import { createConfig, scan } from "../src";
 
 describe("createConfig", () => {
   it("creates a new config using the current folder as the project root by default", () => {
@@ -19,5 +20,16 @@ describe("createConfig", () => {
     expect(config.settings["[markdown]"]).toBeDefined();
     expect(config.settings["[typescript]"]).toBeDefined();
     expect(config).toMatchSnapshot();
+  });
+});
+
+describe("scan", () => {
+  it("creates a list of presets based on preset matchers and found files", async () => {
+    const dir = join(__dirname, "./fixtures/basic");
+    const presets = await scan(dir);
+
+    expect(presets).toContain("deno");
+    expect(presets).toContain("markdown");
+    expect(presets).toContain("typescript");
   });
 });

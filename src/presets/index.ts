@@ -8,10 +8,13 @@ import typescriptreact from "./typescriptreact";
 import yaml from "./yaml";
 
 export interface Preset {
+  matcher: RegExp;
   settings: any;
 }
 
-export const presets: Map<string, Preset> = new Map([
+export type PresetMap = Map<string, Preset>;
+
+export const presets: PresetMap = new Map([
   ["deno", deno],
   ["javascript", javascript],
   ["javascriptreact", javascriptreact],

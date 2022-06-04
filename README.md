@@ -36,11 +36,7 @@ $ vsconfig --extensions
 ```typescript
 import { createConfig } from "vsconfig";
 
-const config = createConfig([
-  "json",
-  "markdown",
-  "typescript",
-]);
+const config = createConfig(["json", "markdown", "typescript"]);
 
 console.log("Settings:", config.settings);
 ```
