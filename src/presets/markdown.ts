@@ -1,6 +1,7 @@
 import type { Preset } from ".";
 
 const preset: Preset = {
+  description: "Markdown",
   matcher: /.md$/,
   settings: {
     "[markdown]": {

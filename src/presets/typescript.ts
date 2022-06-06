@@ -1,6 +1,7 @@
 import type { Preset } from ".";
 
 const preset: Preset = {
+  description: "TypeScript",
   matcher: /.ts$/,
   settings: {
     "[typescript]": {

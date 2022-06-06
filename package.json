@@ -2,11 +2,15 @@
   "name": "vsconfig",
   "version": "1.0.0",
   "main": "dist",
+  "bin": {
+    "vsconfig": "dist/cli"
+  },
   "repository": "git@github.com:bentruyman/vsconfig.git",
   "author": "Ben Truyman <ben@truyman.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "cli": "node dist/cli",
     "dev": "yarn build --watch",
     "format": "yarn lint --fix",
     "lint": "eslint --cache --ext .js,.ts .",
@@ -14,12 +18,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "cac": "^6.7.12",
+    "inquirer": "^8.2.4",
     "klaw": "^4.0.1",
     "lodash.merge": "^4.6.2",
     "through2": "^4.0.2"
   },
   "devDependencies": {
     "@tsconfig/node16-strictest": "^1.0.1",
+    "@types/inquirer": "^8.2.1",
     "@types/jest": "^27.5.1",
     "@types/klaw": "^3.0.3",
     "@types/lodash.merge": "^4.6.7",

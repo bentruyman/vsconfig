@@ -8,6 +8,7 @@ import typescriptreact from "./typescriptreact";
 import yaml from "./yaml";
 
 export interface Preset {
+  description: string;
   matcher: RegExp;
   settings: any;
 }
