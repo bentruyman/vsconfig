@@ -33,12 +33,29 @@ $ vsconfig --extensions
 
 ### API
 
+#### Create a new config from a list of presets
+
 ```typescript
 import { createConfig } from "vsconfig";
+import { presets } from "vsconfig/presets";
 
-const config = createConfig(["json", "markdown", "typescript"]);
+const config = createConfig({ presets });
 
-console.log("Settings:", config.settings);
+console.log("VSCode Config:", config.settings);
+```
+
+#### Create a list of presets by scanning a project
+
+```typescript
+import { scan } from "vsconfig";
+import { presets } from "vsconfig/presets";
+
+const foundPresets = await scan({
+  dir: process.cwd(),
+  presets,
+});
+
+console.log("Found presets:", foundPresets);
 ```
 
 ## Supported
