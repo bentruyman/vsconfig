@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "cli": "node dist/cli",
+    "cli": "ts-node src/cli",
     "dev": "yarn build --watch",
     "format": "yarn lint --fix",
     "lint": "eslint --cache --ext .js,.ts .",
