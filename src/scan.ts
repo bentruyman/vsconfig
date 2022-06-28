@@ -1,8 +1,8 @@
 import klaw from "klaw";
 
 import { relative } from "path";
-import type { ConfigContext } from "./createConfig";
 
+import type { ConfigContext } from "./createConfig";
 import { findMatchingPresets } from "./util";
 
 export function scan(

@@ -9,7 +9,7 @@
   "author": "Ben Truyman <ben@truyman.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "cli": "node dist/cli",
     "dev": "yarn build --watch",
     "format": "yarn lint --fix",
