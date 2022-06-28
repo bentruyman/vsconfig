@@ -1,3 +1,4 @@
+import type { ConfigContext, Settings } from "../createConfig";
 import deno from "./deno";
 import javascript from "./javascript";
 import javascriptreact from "./javascriptreact";
@@ -10,7 +11,7 @@ import yaml from "./yaml";
 export interface Preset {
   description: string;
   matcher: RegExp;
-  settings: any;
+  settings: Settings | ((ctx: ConfigContext) => Settings);
 }
 
 export type PresetMap = Map<string, Preset>;
