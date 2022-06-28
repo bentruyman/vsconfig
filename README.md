@@ -52,6 +52,7 @@ import { presets } from "vsconfig/presets";
 
 const foundPresets = await scan({
   dir: process.cwd(),
+  exclude: ["dist", "test/fixtures/**/*.json"],
   presets,
 });
 

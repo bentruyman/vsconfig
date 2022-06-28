@@ -1,5 +1,26 @@
 import { createConfig } from "../src";
-import { getFixturePresets } from "./fixtures";
+import type { PresetMap } from "../src/presets";
+
+function getFixturePresets(): PresetMap {
+  return new Map([
+    [
+      "foo",
+      {
+        description: "foo description",
+        matcher: /foo/,
+        settings: { foo: true },
+      },
+    ],
+    [
+      "bar",
+      {
+        description: "bar description",
+        matcher: /bar/,
+        settings: { bar: false },
+      },
+    ],
+  ]);
+}
 
 describe("createConfig", () => {
   it("creates a new config based on a collection of specified presets", () => {
