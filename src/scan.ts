@@ -2,13 +2,15 @@ import klaw from "klaw";
 
 import { relative } from "path";
 
-import type { ConfigContext } from "./createConfig";
+import type { PresetMap } from "./presets";
 import { findMatchingPresets } from "./util";
 
-export function scan(
-  dir: string,
-  { presets }: ConfigContext
-): Promise<string[]> {
+interface ScanOptions {
+  dir: string;
+  presets: PresetMap;
+}
+
+export function scan({ dir, presets }: ScanOptions): Promise<string[]> {
   return new Promise((resolve) => {
     const foundPresets: Set<string> = new Set();
 

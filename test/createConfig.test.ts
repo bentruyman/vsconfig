@@ -1,27 +1,5 @@
-import { join } from "path";
-import { createConfig, scan } from "../src";
-import type { PresetMap } from "../src/presets";
-
-function getFixturePresets(): PresetMap {
-  return new Map([
-    [
-      "foo",
-      {
-        description: "foo description",
-        matcher: /foo/,
-        settings: { foo: true },
-      },
-    ],
-    [
-      "bar",
-      {
-        description: "bar description",
-        matcher: /bar/,
-        settings: { bar: false },
-      },
-    ],
-  ]);
-}
+import { createConfig } from "../src";
+import { getFixturePresets } from "./fixtures";
 
 describe("createConfig", () => {
   it("creates a new config based on a collection of specified presets", () => {
@@ -51,15 +29,5 @@ describe("createConfig", () => {
     expect(config.settings!.foo).toBe(true);
     expect(config.settings!.bar).toBe(false);
     expect(config.settings!.baz).toBe("baz");
-  });
-});
-
-describe("scan", () => {
-  it("creates a list of presets based on preset matchers and found files", async () => {
-    const presets = getFixturePresets();
-    const dir = join(__dirname, "./fixtures/basic");
-    const found = await scan(dir, { presets });
-
-    expect(found).toContain("foo");
   });
 });

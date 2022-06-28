@@ -19,7 +19,7 @@ cli
     const initialPresets: string[] = [];
 
     if (shouldScan) {
-      initialPresets.push(...(await scan(dir, { presets })));
+      initialPresets.push(...(await scan({ dir, presets })));
     }
 
     const choices = Array.from(presets.entries())
